@@ -11,8 +11,8 @@ export const Container = styled.div`
   min-height: 100vh;
   overflow: hidden;
   @media (max-width: 1000px) {
-    overflow-y: scroll;
-    padding-bottom: 30px;
+    overflow: auto;
+    min-height: 100vh;
   }
 `;
 export const ContainerPokemon = styled.div`
@@ -78,6 +78,9 @@ export const Name = styled.div`
     color: white;
     font-size: 2em;
     font-family: Poppins;
+    @media (max-width: 900px) {
+      font-size: 1.8em;
+    }
   }
   span {
     position: relative;
@@ -129,6 +132,7 @@ export const StatsPokemon = styled.div`
   gap: 40px;
   @media (max-width: 900px) {
     gap: 20px;
+    margin-bottom: 20px;
   }
 `;
 export const NameStatus = styled.div`
@@ -163,6 +167,9 @@ export const Value = styled.div`
 export const Types = styled.div`
   display: flex;
   gap: 10px;
+  @media (max-width: 900px) {
+    margin-top: 12px;
+  }
 `;
 export const Inicio = styled.button`
   background-color: rgba(0, 0, 0, 0.4);
@@ -179,9 +186,9 @@ export const Inicio = styled.button`
     align-items: center;
     justify-content: center;
     gap: 5px;
-    p{
+    p {
       position: relative;
-      top:1px;
+      top: 1px;
     }
     svg {
       font-size: 1.2em;
