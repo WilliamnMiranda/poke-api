@@ -165,22 +165,31 @@ export const Types = styled.div`
   gap: 10px;
 `;
 export const Inicio = styled.button`
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 40px;
   width: 100px;
   border-radius: 20px;
   border: none;
   outline: none;
-  color:white;
+  color: white;
   font-weight: bold;
-  a{
-    color:white;
+  a {
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    svg{
+    p{
+      position: relative;
+      top:1px;
+    }
+    svg {
       font-size: 1.2em;
     }
   }
-`
+  @media (max-width: 900px) {
+    font-size: 0.8em;
+    height: 35px;
+    margin-bottom: 5px;
+  }
+`;

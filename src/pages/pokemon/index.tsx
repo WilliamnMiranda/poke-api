@@ -60,7 +60,7 @@ const PagePokemon = () => {
         <Infos>
           <Inicio>
             <NavLink to='/'>
-              <AiOutlineHome /> <span> VOLTAR</span>
+              <AiOutlineHome /> <p>HOME</p>
             </NavLink>
           </Inicio>
           <Name>
