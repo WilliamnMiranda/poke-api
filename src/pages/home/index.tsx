@@ -28,7 +28,7 @@ const HomePage = () => {
           pokemons.map((item: { url: string, name: string }) => <CardPokemon key={item.url} item={item} />) :
           pokemonFilter.length > 1 ? 
           pokemonFilter.map((item: { pokemon : {url: string, name: string } }) => <CardPokemon key={item.pokemon.url} item={item.pokemon} />) :
-          pokemonFilter.map((item: IPokemon) => <CardFilter pokemon={item} />)
+          pokemonFilter.map((item: IPokemon) => <CardFilter key={item.id} pokemon={item} />)
         }
       </ContainerPokemons>
     </Container>

@@ -7,9 +7,6 @@ export const ContainerCard = styled.article`
   padding: 10px;
   display: flex;
   border-radius: 10px;
-  @media(max-width: 800px){
-      width:90%;
-  }
 `;
 export const Information = styled.section`
   width: 60%;

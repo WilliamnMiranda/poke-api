@@ -2,7 +2,6 @@ import React from 'react'
 import pokemonServices from '../../services/pokemon'
 import IPokemon from '../../interfaces/pokemons'
 import Stats from '../stats'
-import CardFilter from './cardFilter'
 import {
   ContainerCard,
   Information,
@@ -14,7 +13,6 @@ import {
   Container
 } from './style'
 import { pokemonTypes } from '../../helpers/bgColorsPokemon'
-import { PokemonContext } from '../../contexts/pokemon'
 import { NavLink } from 'react-router-dom'
 
 interface IProps {
@@ -45,7 +43,6 @@ const CardPokemon = ({ item }: IProps) => {
   return (
     <Container>
       <NavLink to={`/${pokemon?.id}`}>
-        {
           <ContainerCard color={colorType}>
             <Information>
               <Id># {pokemon?.id}</Id>
@@ -62,7 +59,6 @@ const CardPokemon = ({ item }: IProps) => {
               <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon?.id}.svg`} />
             </Image>
           </ContainerCard>
-        }
       </NavLink>
     </Container>
   )
