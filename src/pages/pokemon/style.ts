@@ -8,8 +8,12 @@ export const Container = styled.div`
   justify-content: center;
   background-color: ${({ color }) => color};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
+  @media (max-width: 1000px) {
+    overflow-y: scroll;
+    padding-bottom: 30px;
+  }
 `;
 export const ContainerPokemon = styled.div`
   width: 70%;

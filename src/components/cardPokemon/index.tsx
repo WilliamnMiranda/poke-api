@@ -27,7 +27,6 @@ const CardPokemon = ({ item }: IProps) => {
 
   const [pokemon, setPokemon] = React.useState<IPokemon>()
   const [colorType, setColorType] = React.useState<string>('')
-  const { pokemonFilter } = React.useContext(PokemonContext)
 
   const filterPokemon = async () => {
     const pokemonFilter = await pokemonServices.getStatusByUrl(item!.url)
