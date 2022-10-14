@@ -43,22 +43,22 @@ const CardPokemon = ({ item }: IProps) => {
   return (
     <Container>
       <NavLink to={`/${pokemon?.id}`}>
-          <ContainerCard color={colorType}>
-            <Information>
-              <Id># {pokemon?.id}</Id>
-              <Name>{pokemon?.name}</Name>
-              <Types>
-                {pokemon?.types.map((item) => {
-                  return <Stats type={item.type.name} />
-                })}
-              </Types>
-            </Information>
+        <ContainerCard color={colorType}>
+          <Information>
+            <Id># {pokemon?.id}</Id>
+            <Name>{pokemon?.name}</Name>
+            <Types>
+              {pokemon?.types.map((item) => {
+                return <Stats type={item.type.name} />
+              })}
+            </Types>
+          </Information>
 
-            <Image>
-              <Background />
-              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon?.id}.svg`} />
-            </Image>
-          </ContainerCard>
+          <Image>
+            <Background />
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon?.id}.svg`} />
+          </Image>
+        </ContainerCard>
       </NavLink>
     </Container>
   )

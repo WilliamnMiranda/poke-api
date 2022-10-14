@@ -1,8 +1,8 @@
 interface ITypes {
-    slot: number,
-    type: {
-        name : string
-    }
+  slot: number;
+  type: {
+    name: string;
+  };
 }
 
-export default ITypes
+export default ITypes;

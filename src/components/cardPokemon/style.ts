@@ -49,22 +49,22 @@ export const Name = styled.p`
 
 export const Types = styled.p`
   display: flex;
-  gap:5px;
+  gap: 5px;
 `;
-export const Container= styled.div`
+export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  a{
+  a {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  @media(max-width: 800px){
-      width:90%;
-      @media(max-width: 1000px){
-      width:90%;
+  @media (max-width: 800px) {
+    width: 90%;
+    @media (max-width: 1000px) {
+      width: 90%;
+    }
   }
-  }
-`
+`;

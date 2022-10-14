@@ -16,7 +16,7 @@ const HomePage = () => {
   const [value, setValue] = React.useState<string>('')
   const { pokemonFilter } = React.useContext(PokemonContext)
   const [loading, setLoading] = React.useState<boolean | null>(null)
-  const { error,setError } = React.useContext(ErrorContext)
+  const { error } = React.useContext(ErrorContext)
   const { setPage,setPagination } = usePagination()
   const getPokemons = async () => {
     setLoading(true)

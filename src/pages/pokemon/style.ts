@@ -134,7 +134,7 @@ export const StatsPokemon = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
-  @media (max-width:1500px) {
+  @media (max-width: 1500px) {
     gap: 20px;
     margin-bottom: 20px;
   }

@@ -1,22 +1,22 @@
-import React,{ SetStateAction } from 'react'
+import React, { SetStateAction } from 'react'
 
 interface IContextError {
-    error:string,
+    error: string,
     setError: React.Dispatch<SetStateAction<string>>
 }
 interface IChildren {
-    children : React.ReactNode
+    children: React.ReactNode
 }
 const initialValue = {
     error: '',
-    setError :  () => {}
+    setError: () => { }
 }
 export const ErrorContext = React.createContext<IContextError>(initialValue);
 
-export const ErrorProvider = ({ children } : IChildren) => {
+export const ErrorProvider = ({ children }: IChildren) => {
     const [error, setError] = React.useState<string>('')
     return (
-        <ErrorContext.Provider value={{error,setError}}>
+        <ErrorContext.Provider value={{ error, setError }}>
             {children}
         </ErrorContext.Provider>
     )

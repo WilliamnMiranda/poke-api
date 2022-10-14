@@ -15,9 +15,9 @@ interface IProps {
   value: string
 }
 const Filter = ({ setValue, value }: IProps) => {
-  const [ filterPokemonByName, filterPokemonByType ] = usePokemon()
+  const [filterPokemonByName, filterPokemonByType] = usePokemon()
   const { setPokemonsFilter } = React.useContext(PokemonContext);
-  const { error,setError } = React.useContext(ErrorContext)
+  const { error, setError } = React.useContext(ErrorContext)
   const setParamsFilter = () => {
     setPokemonsFilter(null)
     setValue('')
@@ -31,12 +31,12 @@ const Filter = ({ setValue, value }: IProps) => {
           onChange={(e) => setValue(e.target.value)}
           placeholder='Digite o nome do pokemon'
         />
-        <button onClick={()=> filterPokemonByName(value) }>Pesquisar</button>
+        <button onClick={() => filterPokemonByName(value)}>Pesquisar</button>
         <button onClick={setParamsFilter}>INICIO</button>
       </FilterInput>
       <FilterType>
         {
-          pokemonTypes.map((item)=> <span onClick={()=> filterPokemonByType(item.name)}> <Stats type={item.name}/> </span>)
+          pokemonTypes.map((item) => <span onClick={() => filterPokemonByType(item.name)}> <Stats type={item.name} /> </span>)
         }
       </FilterType>
     </Container>

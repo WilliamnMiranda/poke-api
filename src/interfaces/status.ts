@@ -1,8 +1,8 @@
 interface IStats {
-    base_stat : number,
-    stat : {
-      name : string  
-    }
+  base_stat: number;
+  stat: {
+    name: string;
+  };
 }
 
-export default IStats
+export default IStats;

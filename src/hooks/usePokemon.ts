@@ -1,7 +1,6 @@
 import React from "react";
 import { PokemonContext } from "../contexts/pokemon";
 import pokemonServices from "../services/pokemon";
-import IPokemon from "../interfaces/pokemons";
 import { ErrorContext } from "../contexts/error";
 export const usePokemon = () => {
   const { setPokemonsFilter } = React.useContext(PokemonContext);

@@ -20,7 +20,7 @@ import { FaCampground } from "react-icons/fa";
 import { ImFire } from 'react-icons/im'
 import { SiGhostery } from "react-icons/si";
 
-export const pokemonTypes : {name:string, color: string, icon?:JSX.Element}[] = [
+export const pokemonTypes: { name: string, color: string, icon?: JSX.Element }[] = [
   {
     name: "bug",
     color: "#42E60B",

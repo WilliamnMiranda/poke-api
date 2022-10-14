@@ -6,7 +6,7 @@ interface IProps {
 }
 const Stats = ({ type }: IProps) => {
   const [color, setColor] = React.useState<string>('')
-  const [icon,setIcon] = React.useState<JSX.Element>();
+  const [icon, setIcon] = React.useState<JSX.Element>();
   React.useEffect(() => {
     pokemonTypes.forEach((item) => {
       if (item.name === type) {
