@@ -45,9 +45,6 @@ export const Name = styled.p`
   font-size: 1.5em;
   color: white;
   font-family: "Poppins", monospace;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 export const Types = styled.p`
