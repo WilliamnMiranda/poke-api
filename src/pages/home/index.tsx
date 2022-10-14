@@ -1,36 +1,53 @@
 import React from 'react'
 import pokemonServices from '../../services/pokemon';
 import CardPokemon from '../../components/cardPokemon';
-import { Container,ContainerPokemons } from './style'
+import { Container, ContainerPokemons, ContainerButtons } from './style'
 import Filter from '../../components/filter';
 import { PokemonContext } from '../../contexts/pokemon';
 import CardFilter from '../../components/cardPokemon/cardFilter'
 import IPokemon from '../../interfaces/pokemons';
+import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
+import { usePagination } from '../../hooks/usePagination';
+import Loading from '../../components/loading';
 const HomePage = () => {
   const [pokemons, setPokemons] = React.useState([]);
-  const [value,setValue] = React.useState<string>('')
+  const [value, setValue] = React.useState<string>('')
   const { pokemonFilter } = React.useContext(PokemonContext)
+  const [loading, setLoading] = React.useState<boolean | null>(null)
+  const { setPage,setPagination } = usePagination()
   const getPokemons = async () => {
-    const pokemons = await pokemonServices.getAll();
-    setPokemons(pokemons)
+    setLoading(true)
+    const data = await pokemonServices.getAll();
+    const { next, previous } = data
+    setPokemons(data.results)
+    setPagination({ next, previous })
+    setLoading(false)
   }
-
   React.useEffect(() => {
     getPokemons()
   }, [])
-
+  const alterPage = async (type : string) => {
+    const pokemons = await setPage(type)
+    if(pokemons !== null)
+      setPokemons(pokemons)
+  }
   return (
     <Container>
-      <Filter value={value} setValue={setValue}/>
+      <Filter value={value} setValue={setValue} />
       <ContainerPokemons>
         {
-          pokemonFilter == null ?
-          pokemons.map((item: { url: string, name: string }) => <CardPokemon key={item.url} item={item} />) :
-          pokemonFilter.length > 1 ? 
-          pokemonFilter.map((item: { pokemon : {url: string, name: string } }) => <CardPokemon key={item.pokemon.url} item={item.pokemon} />) :
-          pokemonFilter.map((item: IPokemon) => <CardFilter key={item.id} pokemon={item} />)
+            loading ? <Loading /> : 
+            pokemonFilter == null ?
+            pokemons.map((item: { url: string, name: string }) => <CardPokemon key={item.url} item={item} />) :
+            pokemonFilter && pokemonFilter.length > 1 ?
+            pokemonFilter?.map((item: { pokemon: { url: string, name: string } }) => <CardPokemon key={item.pokemon.url} item={item.pokemon} />) :
+            pokemonFilter?.map((item: IPokemon) => <CardFilter key={item.id} pokemon={item} />)
         }
       </ContainerPokemons>
+      <ContainerButtons>
+        <div  onClick={() => alterPage('back')}> <FaRegArrowAltCircleLeft /> </div>
+        <div onClick={() => alterPage('next')}>  <FaRegArrowAltCircleRight /> </div>
+      </ContainerButtons>
     </Container>
   )
 }

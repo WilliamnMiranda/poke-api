@@ -2,7 +2,7 @@ import Api from "../helpers/api"
 import IPokemon from "../interfaces/pokemons"
 const pokemonServices = {
     getAll : async function () {
-        return (await Api.get('/pokemon?limit=52')).data.results
+        return (await Api.get('/pokemon?limit=20')).data
     },
     getStatusByUrl : async function (url : string) {
        const response = await fetch(url)
@@ -13,9 +13,8 @@ const pokemonServices = {
         return (await Api.get(`/pokemon/${pokemon}`)).data
     },
     getByType : async function (type : string){
-        const a =  (await Api.get(`/type/${type}`)).data.pokemon
-        console.log(a)
-        return a
+        return (await Api.get(`/type/${type}`)).data.pokemon
+  
     }
 }
 

@@ -10,6 +10,10 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  @media (max-width: 1500px) {
+    overflow: auto;
+  }
+
   @media (max-width: 1000px) {
     overflow: auto;
     min-height: 100vh;
@@ -130,7 +134,7 @@ export const StatsPokemon = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
-  @media (max-width: 900px) {
+  @media (max-width:1500px) {
     gap: 20px;
     margin-bottom: 20px;
   }

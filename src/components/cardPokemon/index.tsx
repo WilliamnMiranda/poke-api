@@ -56,7 +56,7 @@ const CardPokemon = ({ item }: IProps) => {
 
             <Image>
               <Background />
-              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon?.id}.svg`} />
+              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`} />
             </Image>
           </ContainerCard>
       </NavLink>
