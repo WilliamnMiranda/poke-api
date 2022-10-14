@@ -17,7 +17,7 @@ const HomePage = () => {
   const { pokemonFilter } = React.useContext(PokemonContext)
   const [loading, setLoading] = React.useState<boolean | null>(null)
   const { error } = React.useContext(ErrorContext)
-  const { setPage,setPagination } = usePagination()
+  const { setPage, setPagination } = usePagination()
   const getPokemons = async () => {
     setLoading(true)
     const data = await pokemonServices.getAll();
@@ -29,9 +29,9 @@ const HomePage = () => {
   React.useEffect(() => {
     getPokemons()
   }, [])
-  const alterPage = async (type : string) => {
+  const alterPage = async (type: string) => {
     const pokemons = await setPage(type)
-    if(pokemons !== null)
+    if (pokemons !== null)
       setPokemons(pokemons)
   }
   return (
@@ -40,18 +40,21 @@ const HomePage = () => {
       <Filter value={value} setValue={setValue} />
       <ContainerPokemons>
         {
-            loading ? <Loading /> : 
+          loading ? <Loading /> :
             pokemonFilter == null ?
-            pokemons.map((item: { url: string, name: string }) => <CardPokemon key={item.url} item={item} />) :
-            pokemonFilter && pokemonFilter.length > 1 ?
-            pokemonFilter?.map((item: { pokemon: { url: string, name: string } }) => <CardPokemon key={item.pokemon.url} item={item.pokemon} />) :
-            pokemonFilter?.map((item: IPokemon) => <CardFilter key={item.id} pokemon={item} />)
+              pokemons.map((item: { url: string, name: string }) => <CardPokemon key={item.url} item={item} />) :
+              pokemonFilter && pokemonFilter.length > 1 ?
+                pokemonFilter?.map((item: { pokemon: { url: string, name: string } }) => <CardPokemon key={item.pokemon.url} item={item.pokemon} />) :
+                pokemonFilter?.map((item: IPokemon) => <CardFilter key={item.id} pokemon={item} />)
         }
       </ContainerPokemons>
-      <ContainerButtons>
-        <div  onClick={() => alterPage('back')}> <FaRegArrowAltCircleLeft /> </div>
-        <div onClick={() => alterPage('next')}>  <FaRegArrowAltCircleRight /> </div>
-      </ContainerButtons>
+      {
+        !pokemonFilter &&
+        <ContainerButtons>
+          <div onClick={() => alterPage('back')}> <FaRegArrowAltCircleLeft /> </div>
+          <div onClick={() => alterPage('next')}>  <FaRegArrowAltCircleRight /> </div>
+        </ContainerButtons>
+      }
     </Container>
   )
 }
