@@ -10,7 +10,11 @@ const pokemonServices = {
        return data
     },
     getByIdOrName : async function (pokemon : string | number) {
+       try{
         return (await Api.get(`/pokemon/${pokemon}`)).data
+       }catch(e){
+            return null
+       }
     },
     getByType : async function (type : string){
         return (await Api.get(`/type/${type}`)).data.pokemon

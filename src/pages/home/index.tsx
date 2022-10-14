@@ -9,11 +9,14 @@ import IPokemon from '../../interfaces/pokemons';
 import { FaRegArrowAltCircleLeft, FaRegArrowAltCircleRight } from "react-icons/fa";
 import { usePagination } from '../../hooks/usePagination';
 import Loading from '../../components/loading';
+import { ErrorContext } from '../../contexts/error';
+import Error from '../../components/error';
 const HomePage = () => {
   const [pokemons, setPokemons] = React.useState([]);
   const [value, setValue] = React.useState<string>('')
   const { pokemonFilter } = React.useContext(PokemonContext)
   const [loading, setLoading] = React.useState<boolean | null>(null)
+  const { error,setError } = React.useContext(ErrorContext)
   const { setPage,setPagination } = usePagination()
   const getPokemons = async () => {
     setLoading(true)
@@ -33,6 +36,7 @@ const HomePage = () => {
   }
   return (
     <Container>
+      {error && <Error message={error} />}
       <Filter value={value} setValue={setValue} />
       <ContainerPokemons>
         {

@@ -9,6 +9,7 @@ import pokemonServices from '../../services/pokemon'
 import { pokemonTypes } from '../../helpers/bgColorsPokemon'
 import Stats from '../stats'
 import { usePokemon } from '../../hooks/usePokemon'
+import { ErrorContext } from '../../contexts/error'
 interface IProps {
   setValue: React.Dispatch<SetStateAction<string>>
   value: string
@@ -16,9 +17,11 @@ interface IProps {
 const Filter = ({ setValue, value }: IProps) => {
   const [ filterPokemonByName, filterPokemonByType ] = usePokemon()
   const { setPokemonsFilter } = React.useContext(PokemonContext);
+  const { error,setError } = React.useContext(ErrorContext)
   const setParamsFilter = () => {
     setPokemonsFilter(null)
     setValue('')
+    setError('')
   }
   return (
     <Container>

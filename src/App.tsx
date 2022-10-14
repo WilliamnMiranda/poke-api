@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { ErrorProvider } from './contexts/error'
 import { PokemonProvider } from './contexts/pokemon'
 import RoutesApplication from './routes'
 
@@ -16,10 +17,12 @@ function App() {
     }
   `
   return (
-    <PokemonProvider>
-      <GlobalStyle />
-      <RoutesApplication />
-    </PokemonProvider>
+    <ErrorProvider>
+      <PokemonProvider>
+        <GlobalStyle />
+        <RoutesApplication />
+      </PokemonProvider>
+    </ErrorProvider>
   )
 }
 
