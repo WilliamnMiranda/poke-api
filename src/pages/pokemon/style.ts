@@ -9,11 +9,7 @@ export const Container = styled.div`
   background-color: ${({ color }) => color};
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
-  @media (max-width: 1800px) {
-    overflow: auto;
-  }
-
+  overflow-x:hidden;
   @media (max-width: 1000px) {
     min-height: 100vh;
   }
@@ -95,7 +91,7 @@ export const Background = styled.img`
   @media (max-width: 1750px) {
     right: -140%;
   }
-  @media (max-width: 1500px) {
+  @media (max-width: 1850px) {
     display: none;
   }
 `;
@@ -131,9 +127,13 @@ export const StatsPokemon = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 40px;
+  @media (max-width: 1800px) {
+    gap: 20px;
+    margin-bottom: 25px;
+  }
   @media (max-width: 1500px) {
     gap: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
 `;
 export const NameStatus = styled.div`
