@@ -35,7 +35,6 @@ export const Background = styled.div`
   border-radius: 50%;
 `;
 export const Id = styled.p`
-  font-family: "Roboto", sans-serif;
   font-size: 1.1em;
   font-weight: bold;
   font-family: "Poppins", monospace;
@@ -45,6 +44,9 @@ export const Name = styled.p`
   font-size: 1.5em;
   color: white;
   font-family: "Poppins", monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const Types = styled.p`
