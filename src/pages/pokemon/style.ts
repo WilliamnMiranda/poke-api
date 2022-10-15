@@ -27,12 +27,10 @@ export const ContainerPokemon = styled.div`
   height: 70vh;
   @media (max-width: 1800px) {
     width: 90%;
-  }
-  @media (max-width: 1500px) {
-    width: 90%;
     height: 100vh;
     flex-direction: column;
   }
+
   @media (max-width: 900px) {
     width: 100%;
     min-height: 100%;
