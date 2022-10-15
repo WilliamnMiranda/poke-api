@@ -133,7 +133,7 @@ export const StatsPokemon = styled.div`
   gap: 40px;
   @media (max-width: 1500px) {
     gap: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 `;
 export const NameStatus = styled.div`
