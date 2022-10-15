@@ -30,7 +30,6 @@ const PagePokemon = () => {
   const [formatId, setFormatId] = React.useState<string>('')
   const getPokemon = async () => {
     const pokemon = await pokemonServices.getByIdOrName(id!)
-    console.log(pokemon)
     setPokemon(pokemon)
     formatNumber(pokemon.id)
     const type = pokemon!.types[0].type.name

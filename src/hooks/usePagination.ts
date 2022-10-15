@@ -7,7 +7,6 @@ export const usePagination = () => {
   }>();
 
   const setPage = async (action: string) => {
-    console.log(pagination);
     if (action === "next") {
       const response = await fetch(pagination!.next);
       const data = await response.json();
@@ -16,7 +15,6 @@ export const usePagination = () => {
       return data.results;
     } else {
       if (pagination!.previous !== null) {
-        console.log("entrei");
         const response = await fetch(pagination!.previous);
         const data = await response.json();
         const { next, previous } = data;

@@ -16,7 +16,7 @@ export const PokemonContext = React.createContext<IContextPokemon>(initialValue)
 
 export const PokemonProvider = ({ children }: IChildren) => {
     const [pokemonFilter, setPokemonsFilter] = React.useState<any[] | null>(null)
-    console.log(pokemonFilter)
+
     return (
         <PokemonContext.Provider value={{ pokemonFilter, setPokemonsFilter }}>
             {children}
