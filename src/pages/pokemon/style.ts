@@ -1,6 +1,6 @@
 import styled from "styled-components";
 interface Progress {
-  tam: string;
+  tam: number;
 }
 export const Container = styled.div`
   display: flex;
@@ -149,11 +149,11 @@ export const Progress = styled.div`
   width: 78%;
   height: 30px;
   @media (max-width: 900px) {
-    width: 68%;
+    width: 65%;
   }
 `;
 export const StatusProgress = styled.div<Progress>`
-  width: ${({ tam }) => tam};
+  width: ${({ tam }) => `${tam} %`};
   height: 30px;
   background-color: white;
   border-radius: 10px;
@@ -164,6 +164,10 @@ export const Value = styled.div`
   display: flex;
   justify-content: center;
   font-family: Poppins;
+  text-align: center;
+  @media (max-width: 900px) {
+    width: 10%;
+  }
 `;
 export const Types = styled.div`
   display: flex;

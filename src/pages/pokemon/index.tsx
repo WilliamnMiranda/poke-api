@@ -82,7 +82,7 @@ const PagePokemon = () => {
                   <Status>
                     <NameStatus>{item.stat.name}</NameStatus>
                     <Progress>
-                      <StatusProgress tam={`${item.base_stat}%`} />
+                      <StatusProgress tam={item.base_stat} />
                     </Progress>
                     <Value>{item.base_stat}</Value>
                   </Status>
