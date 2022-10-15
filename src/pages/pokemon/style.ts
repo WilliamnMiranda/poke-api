@@ -10,12 +10,11 @@ export const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  @media (max-width: 1500px) {
+  @media (max-width: 1800px) {
     overflow: auto;
   }
 
   @media (max-width: 1000px) {
-    overflow: auto;
     min-height: 100vh;
   }
 `;
