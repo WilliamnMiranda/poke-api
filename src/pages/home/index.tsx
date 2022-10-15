@@ -31,8 +31,10 @@ const HomePage = () => {
   }, [])
   const alterPage = async (type: string) => {
     const pokemons = await setPage(type)
-    if (pokemons !== null)
+    if (pokemons !== null){
       setPokemons(pokemons)
+      window.scrollTo(0, 0);
+    }
   }
   return (
     <Container>
